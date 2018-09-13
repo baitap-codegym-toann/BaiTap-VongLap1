@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai8</title>
+</head>
+<body>
+<p align="center"><button type="button" onclick="play();">Chơi game!</button></p>
+<script>
+    function play() {
+        let valueLimiter = prompt("nhập khoảng để đoán fist:last ?","").split(":");
+        let correct = Math.round(
+            Math.random()*Number(valueLimiter[0])+(Number(valueLimiter[1]-Number(valueLimiter[0])))
+        );console.log(correct);
+        for (let i = 0; i<4;i++){
+            if (i === 3){alert("bạn thua mất rùi T.T");break;}
+            let input = prompt("nhập số (còn "+(2-i)+" cơ hội)","");
+            if (Number(input)===correct){
+                alert("chúc mừng! bạn đã đoán đúng !");
+                break;
+            }else if (Number(input)>correct){
+                alert("lơn hơn đáp án");
+            } else {
+                alert("nhỏ hơn đáp án");
+            }
+        }
+    }
+</script>
+</body>
+</html>

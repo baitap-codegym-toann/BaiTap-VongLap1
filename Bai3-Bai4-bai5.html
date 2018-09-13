@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>fibbonaci</title>
+</head>
+<body>
+<script>
+    function fibbonaci(n) {
+        if(n<0){alert("fibonaci start from 0 >:(")}
+        if (n<2){return n}
+        return fibbonaci(n-1)+fibbonaci(n-2);
+    }
+    
+    function bai3(number) {
+        for (let i =0;i < number;i++ ){
+            console.log(fibbonaci(i));
+        }
+    }
+    function bai5(number) {
+        let sum =0;
+        for (let i =0;i < number;i++ ){
+          sum +=fibbonaci(i);
+        }
+        return sum;
+    }
+    function bai4() {
+        let  i = 1;
+        while (fibbonaci(i)%5 !==0 ){
+            i++;
+        }
+        return fibbonaci(i);
+    }
+    console.log(bai4());
+    console.log(bai5(20));
+    bai3(20);
+</script>
+</body>
+</html>
